@@ -3,7 +3,7 @@
 # Disable root SSH login
 
 if [ -f /etc/ssh/sshd_config ]; then
-    sed '/PermitRootLogin yes/a PermitRootLogin no' /etc/ssh/sshd_config
+    sed -i 's/#PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
     systemctl restart sshd
     echo "Root SSH login disabled successfully"
 else
