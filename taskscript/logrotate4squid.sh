@@ -21,7 +21,7 @@ fi
 
 #Create a new logrotate configuration file for squid
 sudo tee /etc/logrotate.d/squid << EOF
-/var/log/squid.log {
+/var/log/squid/*.log {
     monthly
     rotate 3
     compress
